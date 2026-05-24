@@ -14,8 +14,34 @@
                 <div class="card-body">
                     <form method="post">
                         {% csrf_token %}
-                        {{ form.as_p }}
-                        <button type="submit" class="btn btn-success w-100">Reģistrēties</button>
+
+                        <!-- Username -->
+                        <div class="mb-3">
+                            <label class="form-label">Lietotājvārds</label>
+                            {{ form.username }}
+                            <div class="form-text">
+                                Nepieciešams, 150 vai mazāk rakstzīmju. Tikai burti, cipari un @/./+/-/_.
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-3">
+                            <label class="form-label">Parole</label>
+                            {{ form.password1 }}
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="mb-3">
+                            <label class="form-label">Paroles apstiprinājums</label>
+                            {{ form.password2 }}
+                            <div class="form-text">
+                                Ievadi iepriekš norādīto paroli verifikācijai.
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">
+                            Reģistrēties
+                        </button>
                     </form>
 
                     <div class="mt-3 text-center">
